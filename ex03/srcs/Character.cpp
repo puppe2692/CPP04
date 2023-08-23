@@ -6,7 +6,7 @@
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:38:43 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/23 17:26:55 by nwyseur          ###   ########.fr       */
+/*   Updated: 2023/08/23 18:51:57 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ Character& Character::operator=(Character& other)
 	std::cout << "Character operator = call" << std::endl;
 	if (this != &other)
 	{
-		this->_name = other._name;
+		this->_name = other.getName();
 		for (int i = 0; i < this->_inventorySize; i++)
 		{
 			if (this->_inventory[i])
@@ -62,5 +62,38 @@ Character& Character::operator=(Character& other)
 		}
 	}
 	return (*this);
+}
 
+std::string const & Character::getName() const
+{
+	return(this->_name);
+}
+
+void Character::equip(AMateria* m)
+{
+	for (int i = 0; i < this->_inventorySize; i++)
+	{
+		if (this->_inventory[i] == NULL)
+		{
+			this->_inventory[i] = m;
+			std::cout << "Materia " << m->getType() << "equiped on slot " << i << std::endl;
+			return;
+		}
+	}
+	std::cout << "Materia can't be equiped, inventory is full" << std::endl;
+
+}
+
+void Character::unequip(int idx)
+{
+	
+}
+
+void Character::use(int idx, ICharacter& target)
+{
+	if (idx >= 0 && idx < this->_inventorySize)
+	{
+		this->_inventory[idx]->use(target);
+	}
+	std::cout << "do nothing" << std::endl;
 }

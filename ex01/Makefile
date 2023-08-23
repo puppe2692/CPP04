@@ -6,24 +6,22 @@
 #    By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 21:18:35 by nwyseur           #+#    #+#              #
-#    Updated: 2023/08/22 15:59:51 by nwyseur          ###   ########.fr        #
+#    Updated: 2023/08/22 16:00:31 by nwyseur          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= Animals
+NAME		:= animalsWithBrain
 
 SRCS_FILES	:= main.cpp \
 				Animal.cpp \
-				WrongAnimal.cpp \
+				Brain.cpp \
 				Dog.cpp \
 				Cat.cpp \
-				WrongCat.cpp
 
 HEADER_FILE	:= Animal.hpp \
-				WrongAnimal.hpp \
 				Dog.hpp \
-				Cat.cpp \
-				WrongCat.hpp \
+				Cat.hpp \
+				Brain.hpp \
 
 SRCS_DIR	:= ./srcs/
 INC_DIR		:= ./includes/

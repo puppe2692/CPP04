@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Materia.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 17:47:52 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/22 16:07:48 by nwyseur          ###   ########.fr       */
+/*   Created: 2023/08/23 10:02:00 by nwyseur           #+#    #+#             */
+/*   Updated: 2023/08/23 12:17:04 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef MATERIA_HPP
+# define MATERIA_HPP
 
 # include <string>
 # include <iostream>
-# include "Animal.hpp"
+# include "IMateria.hpp"
 
-class Dog : public Animal
+class MateriaSource : public IMateriaSource
 {
 	public:
+		MateriaSource(void);
+		MateriaSource(MateriaSource& other);
+		~MateriaSource(void);
+
+		MateriaSource& operator=(MateriaSource& other);
 	
-		Dog(void);
-		Dog(std::string type);
-		Dog(Dog& type);
-		~Dog(void);
-
-		Dog& operator=(Dog& other);
-		std::string getType(void) const;
-
-		void makeSound(void) const;
-		
 	private:
-	
 };
 
 #endif

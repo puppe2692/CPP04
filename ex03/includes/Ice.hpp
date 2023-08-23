@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 17:47:52 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/22 16:07:48 by nwyseur          ###   ########.fr       */
+/*   Created: 2023/08/22 17:59:29 by nwyseur           #+#    #+#             */
+/*   Updated: 2023/08/23 17:30:25 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
 # include <string>
 # include <iostream>
-# include "Animal.hpp"
+# include "AMateria.hpp"
 
-class Dog : public Animal
+class Ice : public AMateria
 {
-	public:
-	
-		Dog(void);
-		Dog(std::string type);
-		Dog(Dog& type);
-		~Dog(void);
+	public :
+		Ice(void);
+		Ice(Ice& other);
+		~Ice(void);
 
-		Dog& operator=(Dog& other);
-		std::string getType(void) const;
-
-		void makeSound(void) const;
+		Ice& operator=(Ice& other);
+		void use(ICharacter& target);
+		AMateria* clone() const;
 		
-	private:
-	
 };
 
 #endif

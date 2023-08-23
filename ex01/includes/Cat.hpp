@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 17:47:52 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/22 16:07:48 by nwyseur          ###   ########.fr       */
+/*   Created: 2023/08/21 17:47:50 by nwyseur           #+#    #+#             */
+/*   Updated: 2023/08/22 16:01:19 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 # include <string>
 # include <iostream>
 # include "Animal.hpp"
+# include "Brain.hpp"
 
-class Dog : public Animal
+class Cat : public Animal
 {
 	public:
 	
-		Dog(void);
-		Dog(std::string type);
-		Dog(Dog& type);
-		~Dog(void);
+		Cat(void);
+		Cat(std::string type);
+		Cat(Cat& type);
+		~Cat(void);
 
-		Dog& operator=(Dog& other);
+		Cat& operator=(Cat& other);
 		std::string getType(void) const;
+		std::string getIdea(size_t n);
+		void setIdea(std::string idea, size_t n);
 
 		void makeSound(void) const;
 		
 	private:
 	
+		Brain*	_Cerveau;
 };
-
 #endif

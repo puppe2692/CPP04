@@ -6,7 +6,7 @@
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 10:32:57 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/22 11:45:29 by nwyseur          ###   ########.fr       */
+/*   Updated: 2023/08/22 14:46:07 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 Animal::Animal(void)
 {
-	std::cout << "Animal Default Constructor call" << std::endl;
+	std::cout << GREEN << "Animal Default Constructor call" << RESET << std::endl;
 	this->_type = "Bete";
 	return;
 }
 
 Animal::Animal(std::string type) : _type(type)
 {
-	std::cout << "Animal Parameter Constructor call" << std::endl;
+	std::cout << GREEN << "Animal Parameter Constructor call" << RESET << std::endl;
 	return;
 }
 
 Animal::Animal(Animal& other)
 {
-	std::cout << "Animal Copy Constructor call" << std::endl;
+	std::cout << GREEN << "Animal Copy Constructor call" << RESET << std::endl;
 	*this = other;
 	return;
 }
 
 Animal::~Animal(void)
 {
-	std::cout << "Animal Destructor call" << std::endl;
+	std::cout << RED << "Animal Destructor call" << RESET << std::endl;
 	return;
 }
 

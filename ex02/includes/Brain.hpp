@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 17:47:52 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/22 16:07:48 by nwyseur          ###   ########.fr       */
+/*   Created: 2023/08/22 13:22:32 by nwyseur           #+#    #+#             */
+/*   Updated: 2023/08/22 14:53:23 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 # include <string>
 # include <iostream>
-# include "Animal.hpp"
+#include "../includes/Animal.hpp"
 
-class Dog : public Animal
+class Brain
 {
-	public:
-	
-		Dog(void);
-		Dog(std::string type);
-		Dog(Dog& type);
-		~Dog(void);
+	public :
+		Brain(void);
+		Brain(std::string idea);
+		Brain(Brain& other);
+		~Brain(void);
 
-		Dog& operator=(Dog& other);
-		std::string getType(void) const;
+		Brain& operator=(Brain& other);
+		std::string getIdea(size_t n);
+		void setIdea(std::string idea, size_t n);
 
-		void makeSound(void) const;
-		
-	private:
-	
+	private :
+		std::string _ideas[100];
 };
 
 #endif

@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 17:47:52 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/22 16:07:48 by nwyseur          ###   ########.fr       */
+/*   Created: 2023/08/23 09:49:08 by nwyseur           #+#    #+#             */
+/*   Updated: 2023/08/23 16:12:56 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
 # include <string>
 # include <iostream>
-# include "Animal.hpp"
+# include "ICharacter.hpp"
 
-class Dog : public Animal
+class Character : public ICharacter
 {
-	public:
-	
-		Dog(void);
-		Dog(std::string type);
-		Dog(Dog& type);
-		~Dog(void);
+	public :
 
-		Dog& operator=(Dog& other);
-		std::string getType(void) const;
+		Character(void);
+		Character(std::string name);
+		Character(Character& other);
+		~Character(void);
 
-		void makeSound(void) const;
-		
-	private:
-	
+		Character& operator=(Character& other);
+
+
+	private :
+		std::string _name;
+		static const int _inventorySize = 4;
+		AMateria* _inventory[_inventorySize];
 };
 
 #endif

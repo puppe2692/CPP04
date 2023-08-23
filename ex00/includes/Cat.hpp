@@ -6,7 +6,7 @@
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:47:50 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/22 11:17:05 by nwyseur          ###   ########.fr       */
+/*   Updated: 2023/08/22 16:07:45 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@ class Cat : public Animal
 {
 	public:
 	
+		Cat(void);
 		Cat(std::string type);
 		Cat(Cat& type);
 		~Cat(void);
 
 		Cat& operator=(Cat& other);
-		std::string gettype(void);
+		std::string getType(void) const;
 
-		void makeSound(void) override;
+		void makeSound(void) const;
 		
 	private:
 	
-		Cat(void);
 };
 #endif

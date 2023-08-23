@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 17:47:52 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/22 16:07:48 by nwyseur          ###   ########.fr       */
+/*   Created: 2023/08/22 17:54:33 by nwyseur           #+#    #+#             */
+/*   Updated: 2023/08/23 16:09:23 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
+
+#define RED "\e[0;31m"
+#define RESET "\e[0m"
+#define GREEN "\e[0;32m"
+#define YELLOW "\e[0;33m"
 
 # include <string>
 # include <iostream>
-# include "Animal.hpp"
+# include "AMateria.hpp"
 
-class Dog : public Animal
+class ICharacter
 {
-	public:
+	public :
 	
-		Dog(void);
-		Dog(std::string type);
-		Dog(Dog& type);
-		~Dog(void);
-
-		Dog& operator=(Dog& other);
-		std::string getType(void) const;
-
-		void makeSound(void) const;
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
 		
-	private:
-	
 };
 
 #endif

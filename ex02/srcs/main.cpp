@@ -1,48 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main2.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 11:02:26 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/22 12:06:04 by nwyseur          ###   ########.fr       */
+/*   Updated: 2023/08/22 16:26:20 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Animal.hpp"
-#include "../includes/WrongAnimal.hpp"
 #include "../includes/Cat.hpp"
-#include "../includes/WrongCat.hpp"
 #include "../includes/Dog.hpp"
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
 
-	const WrongAnimal* wrongmeta = new WrongAnimal();
-	const WrongAnimal* wrongi = new WrongCat();
-	std::cout << wrongi->getType() << " " << std::endl;
-	wrongi->makeSound(); //will  not output the cat sound!
-	wrongmeta->makeSound();
+	std::cout << "----------Test sound & Delete-----------" << std::endl;
 
-	delete meta;
-	delete i;
-	delete j;
-	delete wrongmeta;
-	delete wrongi;
+	Animal* Animals[4] = {new Dog("Bob"), new Dog("Youki"), new Cat("Jeff"), new Cat("Wiskas")};
+	size_t k = 0;
 
-	Animal* Animals[3] = {new Animal("bete"), new Cat("Cat"), new Dog("Dog")};
-	size_t	k = 0;
-
-	while (k < 3)
+	while (k < 4)
 	{
 		Animals[k]->makeSound();
 		k++;
@@ -53,6 +33,21 @@ int main()
 		delete Animals[k - 1];
 		k--;
 	}
+
+	std::cout << "----------Test copy & switch idea-----------" << std::endl;
+
+	Dog dog1("Philibert");
+
+	dog1.setIdea("Croquette", 0);
+	std::cout << "Philibert idea: " << dog1.getIdea(0) << std::endl;
+	Dog dog2(dog1);
+	std::cout << "Philibert idea: " << dog1.getIdea(0) << std::endl;
+	std::cout << " Copy idea: " << dog2.getIdea(0) << std::endl;
+	dog2.setIdea("os", 0);
+	std::cout << "Philibert idea: " << dog1.getIdea(0) << std::endl;
+	std::cout << " Copy idea: " << dog2.getIdea(0) << std::endl;
+
+	std::cout << "----------Init Animal-----------" << std::endl;
 
 	return (0);
 }

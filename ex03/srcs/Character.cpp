@@ -6,11 +6,13 @@
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:38:43 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/23 18:51:57 by nwyseur          ###   ########.fr       */
+/*   Updated: 2023/08/24 15:01:38 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Character.hpp"
+
+AMateria* floor[100] = {NULL};
 
 Character::Character(void) : _name("unamed")
 {
@@ -86,7 +88,20 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-	
+	if (idx >= 0 && idx < 3)
+	{
+		for (int i = 0; i < 99; i++)
+		{
+			if (floor[i] == NULL)
+			{
+				floor[i] = this->_inventory[idx];
+				this->_inventory[idx] = NULL; // ici
+				return;
+			}
+		}
+		std::cout << "the floor is full of meteria" << std::endl;
+	}
+	std::cout << "Choose a valid slot" << std::endl;
 }
 
 void Character::use(int idx, ICharacter& target)

@@ -6,22 +6,26 @@
 #    By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 21:18:35 by nwyseur           #+#    #+#              #
-#    Updated: 2023/08/22 16:26:48 by nwyseur          ###   ########.fr        #
+#    Updated: 2023/08/24 16:58:52 by nwyseur          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= animalsWithBrain
 
 SRCS_FILES	:= main.cpp \
-				Animal.cpp \
-				Brain.cpp \
-				Dog.cpp \
-				Cat.cpp \
+				AMateria.cpp \
+				Character.cpp \
+				Cure.cpp \
+				Ice.cpp \
+				MateriaSource.cpp \
 
-HEADER_FILE	:= Animal.hpp \
-				Dog.hpp \
-				Cat.hpp \
-				Brain.hpp \
+HEADER_FILE	:= AMateria.hpp \
+				Character.hpp \
+				Cure.hpp \
+				Ice.hpp \
+				ICharacter.hpp \
+				IMateriaSource.hpp \
+				MateriaSource.hpp \
 
 SRCS_DIR	:= ./srcs/
 INC_DIR		:= ./includes/

@@ -6,7 +6,7 @@
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 17:43:14 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/23 16:59:47 by nwyseur          ###   ########.fr       */
+/*   Updated: 2023/08/24 17:13:52 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@
 
 # include <string>
 # include <iostream>
-# include "ICharacter.hpp"
+# include "includes.hpp"
+
+class ICharacter;
 
 class AMateria
 {

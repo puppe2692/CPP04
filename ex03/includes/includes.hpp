@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   includes.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 10:02:00 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/24 16:46:45 by nwyseur          ###   ########.fr       */
+/*   Created: 2023/08/24 16:48:01 by nwyseur           #+#    #+#             */
+/*   Updated: 2023/08/24 16:50:50 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIA_HPP
-# define MATERIA_HPP
+#ifndef INCLUDES_HPP
+# define INCLUDES_HPP
 
-# include <string>
-# include <iostream>
+# include "AMateria.hpp"
+# include "Character.hpp"
+# include "Cure.hpp"
+# include "Ice.hpp"
+# include "ICharacter.hpp"
 # include "IMateriaSource.hpp"
-
-class MateriaSource : public IMateriaSource
-{
-	public:
-		MateriaSource(void);
-		MateriaSource(MateriaSource& other);
-		~MateriaSource(void);
-
-		MateriaSource& operator=(MateriaSource& other);
-
-		void learnMateria(AMateria* m);
-		AMateria* createMateria(std::string const & type);
-	
-	private:
-		AMateria* _spellBook[4];
-
-};
+# include "MateriaSource.hpp"
 
 #endif

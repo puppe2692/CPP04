@@ -6,11 +6,11 @@
 #    By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 21:18:35 by nwyseur           #+#    #+#              #
-#    Updated: 2023/08/24 16:58:52 by nwyseur          ###   ########.fr        #
+#    Updated: 2023/08/24 18:02:03 by nwyseur          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= animalsWithBrain
+NAME		:= Sorcerer
 
 SRCS_FILES	:= main.cpp \
 				AMateria.cpp \

@@ -6,13 +6,13 @@
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:38:43 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/24 15:01:38 by nwyseur          ###   ########.fr       */
+/*   Updated: 2023/08/25 11:52:32 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Character.hpp"
 
-AMateria* floor[100] = {NULL};
+AMateria* Character::sol[100] = {NULL};
 
 Character::Character(void) : _name("unamed")
 {
@@ -39,7 +39,7 @@ Character::Character(Character& other)
 
 Character::~Character(void)
 {
-	std::cout << GREEN << "Character Destructor call" << RESET << std::endl;
+	std::cout << RED << "Character Destructor call" << RESET << std::endl;
 	for (int i = 0; i < this->_inventorySize; i++)
 	{
 		if (this->_inventory[i])
@@ -73,6 +73,10 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
+	if (m == NULL)
+	{
+		return;
+	}
 	for (int i = 0; i < this->_inventorySize; i++)
 	{
 		if (this->_inventory[i] == NULL)
@@ -92,9 +96,9 @@ void Character::unequip(int idx)
 	{
 		for (int i = 0; i < 99; i++)
 		{
-			if (floor[i] == NULL)
+			if (sol[i] == NULL)
 			{
-				floor[i] = this->_inventory[idx];
+				sol[i] = this->_inventory[idx];
 				this->_inventory[idx] = NULL; // ici
 				return;
 			}
@@ -106,9 +110,10 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx >= 0 && idx < this->_inventorySize)
+	if (idx >= 0 && idx < this->_inventorySize && this->_inventory[idx] != NULL)
 	{
 		this->_inventory[idx]->use(target);
+		return;
 	}
-	std::cout << "do nothing" << std::endl;
+	std::cout << "it does nothing" << std::endl;
 }

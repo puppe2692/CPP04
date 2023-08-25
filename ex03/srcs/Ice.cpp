@@ -6,13 +6,13 @@
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:38:52 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/23 17:23:41 by nwyseur          ###   ########.fr       */
+/*   Updated: 2023/08/25 11:11:44 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Ice.hpp"
 
-Ice::Ice(void) : AMateria("Ice")
+Ice::Ice(void) : AMateria("ice")
 {
 	std::cout << GREEN << "Ice Default Constructor call" << RESET << std::endl;
 	return;

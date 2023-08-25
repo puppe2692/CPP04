@@ -6,7 +6,7 @@
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:39:03 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/24 16:45:21 by nwyseur          ###   ########.fr       */
+/*   Updated: 2023/08/25 09:55:28 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void MateriaSource::learnMateria(AMateria* m)
 		if (this->_spellBook[i] == NULL)
 		{
 			this->_spellBook[i] = m;
-			std::cout << "Materia " << m->getType() << "written in spells book " << i << std::endl;
+			std::cout << "Materia " << m->getType() << " written in spells book " << i << std::endl;
 			return;
 		}
 	}

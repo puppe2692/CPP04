@@ -6,7 +6,7 @@
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 09:49:08 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/24 18:04:19 by nwyseur          ###   ########.fr       */
+/*   Updated: 2023/08/25 12:17:15 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class Character : public ICharacter
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
+		void printInventory(void) const;
 
 		static AMateria* sol[100];
 

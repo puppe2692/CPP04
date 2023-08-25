@@ -6,7 +6,7 @@
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 17:54:33 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/24 17:58:37 by nwyseur          ###   ########.fr       */
+/*   Updated: 2023/08/25 12:19:03 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class ICharacter
 		virtual void equip(AMateria* m) = 0;
 		virtual void unequip(int idx) = 0;
 		virtual void use(int idx, ICharacter& target) = 0;
+		virtual void printInventory(void) const = 0;
 		
 };
 

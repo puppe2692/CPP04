@@ -6,7 +6,7 @@
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:38:43 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/25 11:52:32 by nwyseur          ###   ########.fr       */
+/*   Updated: 2023/08/25 12:52:39 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ Character& Character::operator=(Character& other)
 			{
 				delete this->_inventory[i];
 			}
-			this->_inventory[i] = other._inventory[i]->clone(); // pourquoi la on a pas besoin de Getinventory?
+			this->_inventory[i] = other._inventory[i]->clone(); 
 		}
 	}
 	return (*this);
@@ -82,11 +82,12 @@ void Character::equip(AMateria* m)
 		if (this->_inventory[i] == NULL)
 		{
 			this->_inventory[i] = m;
-			std::cout << "Materia " << m->getType() << "equiped on slot " << i << std::endl;
+			std::cout << "Materia " << m->getType() << " equiped on slot " << i << std::endl;
 			return;
 		}
 	}
 	std::cout << "Materia can't be equiped, inventory is full" << std::endl;
+	delete m; // ici
 
 }
 
@@ -99,6 +100,7 @@ void Character::unequip(int idx)
 			if (sol[i] == NULL)
 			{
 				sol[i] = this->_inventory[idx];
+				std::cout << "Unequiped " << sol[i]->getType() << " Materia" << std::endl;
 				this->_inventory[idx] = NULL; // ici
 				return;
 			}
@@ -116,4 +118,16 @@ void Character::use(int idx, ICharacter& target)
 		return;
 	}
 	std::cout << "it does nothing" << std::endl;
+}
+
+void	Character::printInventory(void) const
+{
+	for (int i = 0; i < _inventorySize; i++)
+	{
+		if (_inventory[i])
+			std::cout << _inventory[i]->getType() << "|";
+		else
+			std::cout << "" << "|";
+	}
+	std::cout << std::endl;
 }

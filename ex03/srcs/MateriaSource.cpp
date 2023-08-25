@@ -6,7 +6,7 @@
 /*   By: nwyseur <nwyseur@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 11:39:03 by nwyseur           #+#    #+#             */
-/*   Updated: 2023/08/25 09:55:28 by nwyseur          ###   ########.fr       */
+/*   Updated: 2023/08/25 12:53:23 by nwyseur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void MateriaSource::learnMateria(AMateria* m)
 		}
 	}
 	std::cout << "Materia can't be learn, spells book is full" << std::endl;
+	delete m;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
